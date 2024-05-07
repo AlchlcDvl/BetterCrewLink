@@ -14,7 +14,6 @@ declare module "@mui/material" {
 	}
 }
 
-
 // Create a theme instance.
 const theme = createTheme({
 	palette: {

@@ -38,14 +38,13 @@ import './language/i18n';
 import { withNamespaces } from 'react-i18next';
 import { ISettings } from '../common/ISettings';
 
-
 declare module '@mui/styles/defaultTheme' {
 	// eslint-disable-next-line @typescript-eslint/no-empty-interface
 	interface DefaultTheme extends Theme { }
 }
 
-
 let appVersion = '';
+
 if (typeof window !== 'undefined' && window.location) {
 	const query = new URLSearchParams(window.location.search.substring(1));
 	appVersion = ' v' + query.get('version') || '';

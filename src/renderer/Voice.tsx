@@ -845,7 +845,7 @@ const Voice: React.FC<VoiceProps> = function ({ t, error: initialError }: VoiceP
 			autoGainControl: false,
 			channelCount: 2,
 			echoCancellation: settings.echoCancellation,
-			latency: 0,
+			// latency: 0,
 			noiseSuppression: settings.noiseSuppression,// @ts-ignore-line
 			googNoiseSuppression: settings.noiseSuppression, // @ts-ignore-line
 			googEchoCancellation: settings.echoCancellation, // @ts-ignore-line
@@ -1469,6 +1469,7 @@ const Voice: React.FC<VoiceProps> = function ({ t, error: initialError }: VoiceP
 };
 
 type ValidPlayersPerRow = 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
+
 function getPlayersPerRow(playerCount: number): ValidPlayersPerRow {
 	if (playerCount <= 9) return (12 / 3) as ValidPlayersPerRow;
 	else return Math.min(12, Math.floor(12 / Math.ceil(Math.sqrt(playerCount)))) as ValidPlayersPerRow;

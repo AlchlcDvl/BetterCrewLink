@@ -71,7 +71,7 @@ function isBetween(h: number, h1: number, maxdiffrence: number) {
 	return 180 - Math.abs(Math.abs(h - h1) - 180) < maxdiffrence;
 }
 
-async function colorImage(img: jimp, originalData: Uint8Array, color: string, shadow: string, savepath: string, returnImg = false) {
+async function colorImage(img: jimp, originalData: Uint8Array, color: string, shadow: string, savepath: string) {
 	img.bitmap.data = new Uint8Array(originalData) as Buffer;
 	for (let i = 0, l = img.bitmap.data.length; i < l; i += 4) {
 		const data = img.bitmap.data;

@@ -11,6 +11,7 @@ export enum cosmeticType {
 	hat,
 	hat_back,
 }
+
 interface hatData {
 	image: string;
 	back_image: string;
@@ -20,6 +21,7 @@ interface hatData {
 	multi_color: boolean | undefined;
 	mod: ModsType | undefined;
 }
+
 let hatCollection: {
 	[mod: string]: {
 		defaultWidth: string;
@@ -68,8 +70,6 @@ function getModHat(color: number, id = '', mod: ModsType, back = false) {
 	}
 	return undefined;
 }
-
-
 
 function getHat(id: string, modType: ModsType): hatData | undefined {
 	if (!initializedHats) {

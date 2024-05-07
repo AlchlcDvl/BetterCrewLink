@@ -15,12 +15,10 @@ import LobbyBrowser from './LobbyBrowser';
 import { withNamespaces } from 'react-i18next';
 import { ipcRenderer } from 'electron';
 
-
 declare module '@mui/styles/defaultTheme' {
   // eslint-disable-next-line @typescript-eslint/no-empty-interface
   interface DefaultTheme extends Theme {}
 }
-
 
 const useStyles = makeStyles(() => ({
 	root: {
@@ -98,6 +96,7 @@ export default function App({ t }): JSX.Element {
         </StyledEngineProvider>
     );
 }
+
 // @ts-ignore
 const App2 = withNamespaces()(App);
 // @ts-ignore

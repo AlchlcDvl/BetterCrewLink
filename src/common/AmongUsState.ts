@@ -59,9 +59,11 @@ export interface Client {
 	playerId: number;
 	clientId: number;
 }
+
 export interface SocketClientMap {
 	[socketId: string]: Client;
 }
+
 export interface ClientBoolMap {
 	[clientId: number]: boolean; // isTalking
 }

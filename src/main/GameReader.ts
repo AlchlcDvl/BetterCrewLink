@@ -28,6 +28,7 @@ import { AmongusMod, modList } from '../common/Mods';
 import { app } from 'electron';
 
 let appVersion = '';
+
 if (process.env.NODE_ENV !== 'production') {
 	appVersion = 'DEV';
 } else {
@@ -430,7 +431,7 @@ export default class GameReader {
 				offsetLookups.patterns.x64.broadcastVersion.addressOffset,
 				false,
 				true
-			); 
+			);
 		} else {
 			broadcastVersionAddr = this.findPattern(
 				offsetLookups.patterns.x86.broadcastVersion.sig,
@@ -438,7 +439,7 @@ export default class GameReader {
 				offsetLookups.patterns.x86.broadcastVersion.addressOffset,
 				false,
 				true
-			); 
+			);
 		}
 
 		var broadcastVersion = this.readMemory<number>(
@@ -548,7 +549,7 @@ export default class GameReader {
 
 		this.colorsInitialized = false;
 		console.log('serverManager_currentServer', this.offsets.serverManager_currentServer[0].toString(16));
-		
+
 		this.PlayerStruct = new Struct();
 		for (const member of this.offsets.player.struct) {
 			if (member.type === 'SKIP' && member.skip) {

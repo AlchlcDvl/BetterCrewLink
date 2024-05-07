@@ -3,6 +3,9 @@ export type ModsType =
 	| 'TOWN_OF_US'
 	| 'THE_OTHER_ROLES'
 	| 'LAS_MONJAS'
+	| 'REWORKED'
+	| 'ALL_THE_ROLES'
+	| 'STELLAR_ROLES'
 	| 'OTHER';
 
 export interface AmongusMod {
@@ -38,7 +41,22 @@ export const modList: AmongusMod[] = [
 		dllStartsWith: 'LasMonjas',
 	},
 	{
+		id: 'REWORKED',
+		label: 'Town of Us: Reworked',
+		dllStartsWith: 'Reworked',
+	},
+	{
+		id: 'ALL_THE_ROLES',
+		label: 'All The Roles',
+		dllStartsWith: 'AllTheRoles',
+	},
+	{
+		id: 'STELLAR_ROLES',
+		label: 'Stellar Roles',
+		dllStartsWith: 'StellarRoles',
+	},
+	{
 		id: 'OTHER',
 		label: 'Other',
-	},
+	}
 ];

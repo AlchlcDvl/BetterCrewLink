@@ -96,7 +96,7 @@ export default function lobbyBrowser({ t }) {
 	const [, forceRender] = useState({});
 
 	const [mod, setMod] = useState<ModsType>('NONE');
-	
+
 	useEffect(() => {
 		ipcRenderer.invoke(IpcMessages.REQUEST_MOD).then((mod: ModsType) => setMod(mod));
 

@@ -154,7 +154,7 @@ ipcMain.handle("getlocale", () => {
 });
 
 ipcMain.on('relaunch', async () => {
-	app.relaunch();  
+	app.relaunch();
 	app.exit();
 });
 
