@@ -24,11 +24,11 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16.14.2
-    
+
       - name: Install Dependencies
         if: steps.node-cache.outputs.cache-hit != 'true'
         run: yarn install  --cache-folder .yarn --network-timeout 100000
-        
+
       - name: Build App
         run: yarn run ${{ matrix.dist }}
         env:
@@ -40,17 +40,17 @@ jobs:
           name: BetterCrewLink Installer ${{ runner.os }}
           path: ${{ matrix.installer }}
           if-no-files-found: error
-          
+
       - name: Upload Unpacked 64bit
         uses: actions/upload-artifact@v2
         if: ${{ matrix.os == 'windows-latest'}}
         with:
-          name: BetterCrewLink Unpacked 64bit 
+          name: BetterCrewLink Unpacked 64bit
           path: 'dist/win-unpacked'
-          
+
       - name: Upload Unpacked 32bit
         uses: actions/upload-artifact@v2
         if: ${{ matrix.os == 'windows-latest'}}
         with:
-          name: BetterCrewLink Unpacked 32bit 
+          name: BetterCrewLink Unpacked 32bit
           path: 'dist/win-ia32-unpacked'
